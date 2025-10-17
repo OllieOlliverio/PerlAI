@@ -2,14 +2,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perl AI</title>
-    <link rel="stylesheet" href="style.css"> 
+     
 </head>
 <body>
     <div class="chat-container">
         <div class="chat-messages" id="chatMessages" style="
     height: 94%;
     border: 2px solid #616161;
-    margin: 1% 0%;
+    margin: 14px 0%;
 ">
             <!-- Chat messages will be appended here by JavaScript -->
         </div>
@@ -46,6 +46,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const messageElement = document.createElement('div');
             messageElement.classList.add('message');
             messageElement.textContent = messageText;
+
+            // Append the message to the chat display
+            chatMessages.appendChild(messageElement);
+
+            // Create a new answer element
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('answer');
+            messageElement.textContent = 'Idk';
 
             // Append the message to the chat display
             chatMessages.appendChild(messageElement);
