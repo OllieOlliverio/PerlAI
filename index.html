@@ -1,0 +1,63 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perl AI</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-messages" id="chatMessages" style="
+    height: 94%;
+    border: 2px solid #616161;
+    margin: 1% 0%;
+">
+            <!-- Chat messages will be appended here by JavaScript -->
+        </div>
+        <form class="chat-input-form" id="chatForm">
+            <input type="text" id="messageInput" placeholder="Type your message..." required="" style="
+    width: 97.75%;
+    border: 2px solid #616161;
+    height: 23px;
+    background: #ffffff61;
+">
+            <button title="Submit" type="submit" style="
+    border: 2px solid #85507a;
+    background: pink;
+    color: #85507a;
+    font-weight: 900;
+    font-size: 11.4px;
+">&gt;</button>
+        </form>
+    </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const chatForm = document.getElementById('chatForm');
+    const messageInput = document.getElementById('messageInput');
+    const chatMessages = document.getElementById('chatMessages');
+
+    chatForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent default form submission (page reload)
+
+        const messageText = messageInput.value.trim();
+
+        if (messageText !== '') {
+            // Create a new message element
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message');
+            messageElement.textContent = messageText;
+
+            // Append the message to the chat display
+            chatMessages.appendChild(messageElement);
+
+            // Clear the input field
+            messageInput.value = '';
+
+            // Scroll to the bottom of the chat messages
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    });
+});
+</script> 
+
+</body></html>
